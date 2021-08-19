@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="th.clave">
+
+	<digest>
+		Generate random clave patterns
+	</digest>
+
+	<description>
+		Generate random clave patterns. Outputs a binary list as rhythm, where 1's represent onsets and 0's represent rests. A bang results in a new random list, an integer adjust the output to the length of that size. Optional arguments on the cold inlet set the range of notevalues to choose from. Last optional argument is the density distribution between -1 and 1.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Timo Hoogland</metadata>
+		<metadata name="tag">thModules</metadata>
+		<metadata name="tag">max</metadata>
+		<metadata name="tag">generative</metadata>
+		<metadata name="tag">rhythm</metadata>
+		<metadata name="tag">pattern</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<!-- <inlet id="0" type="int">
+			<digest></digest>
+			<description></description>
+		</inlet> -->
+		<!-- <inlet id="1" type="signal">
+			<digest></digest>
+			<description></description>
+		</inlet> -->
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<!-- <outlet id="0" type="int">
+			<digest></digest>
+			<description></description>
+		</outlet> -->
+		<!-- <outlet id="1" type="float">
+			<digest></digest>
+			<description></description>
+		</outlet> -->
+	</outletlist>
+
+	<!-- ARGUMENTS-->
+	<objarglist>
+		<objarg name="length" optional="1" type="int">
+			<digest>
+				The output pattern length (default=8).
+			</digest>
+			<description>
+				The output length of the generated pattern (default=8).
+			</description>
+		</objarg>
+		<objarg name="maximum" optional="1" type="int">
+			<digest>
+				The maximum distance.
+			</digest>
+			<description>
+				The maximum distance within a pattern. Eg. 4 = '1 0 0 0 1' (default=3).
+			</description>
+		</objarg>
+		<objarg name="minimum" optional="1" type="int">
+			<digest>
+				The minimum distance
+			</digest>
+			<description>
+				The minimum distance within a pattern. Eg. 1 = '1 1' (default=2).
+			</description>
+		</objarg>
+		<objarg name="density" optional="1" type="float">
+			<digest>
+				The distribution density (default=0)
+			</digest>
+			<description>
+				Set the random distribution curve between -1 and 1. For values less then 0 the algorithmi will favor sparse rhythms, for values greater than 0 the algorithm will favor higher density. However it will stay within the limitations of the maximum and minimum distance. (default=0)
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist>
+				<arg name="bang" optional="1" type="bang" />
+			</arglist>
+			<digest>
+				Generate a random pattern.
+			</digest>
+			<description>
+				Generate a random pattern.
+			</description>
+		</method>
+		<method name="int">
+			<arglist>
+				<arg name="int" optional="1" type="int" />
+			</arglist>
+			<digest>
+				Generate a random pattern and specify the length.
+			</digest>
+			<description>
+				Generate a random pattern and specify the length.
+			</description>
+		</method>
+		<method name="seed">
+			<arglist>
+				<arg name="seed" optional="1" type="message" />
+			</arglist>
+			<digest>
+				Set the seed for the psuedorandom number generator.
+			</digest>
+			<description>
+				Set the seed for the psuedorandom number generator.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="seed" get='0' set='1' type='int' size='2'>
+			<arglist>
+				<arg name="seed" optional="1" type="message" />
+			</arglist>
+			<digest>
+				Set the seed for the psuedorandom number generator.
+			</digest>
+			<description>
+				Set the seed for the psuedorandom number generator.
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="th.euclid"/>
+		<seealso name="th.linden"/>
+		<seealso name="th.scala"/>
+		<seealso name="th.stof"/>
+		<seealso name="th."/>
+		<seealso name="jsui"/>
+	</seealsolist>
+</c74object>
