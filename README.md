@@ -10,6 +10,11 @@ Generate random clave patterns for algorithmic composition. Outputs a binary lis
 - `max distance` - the maximum distance between 2 onsets. For example `4` = `1 0 0 0 1`. (default=3)
 - `min distance` - the minimum distance between 2 onsets. For example `1` = `1 1`. (default=2)
 - `density` - the random distribution curve between -1 and 1. Lower values favor longer distances, larger value favors shorter distances. (default=0)
+
+**attributes**
+
+- `seed` - set the seed for the psuedorandom number generator
+
 ## Install
 
 ```
